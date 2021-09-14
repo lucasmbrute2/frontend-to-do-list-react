@@ -3,8 +3,8 @@ import "./Footer.scss"
 
 const Footer = ()=>{
     return(
-        <footer>
-            Um lindo Footer rs
+        <footer className="footer">
+            Todos os direitos reservados a Lucas Victor.
         </footer>
     )
 }
