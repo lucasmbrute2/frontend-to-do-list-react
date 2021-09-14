@@ -7,11 +7,12 @@ const Header = ()=>{
         <header className="header">
            <div className="container">
                 <ul className="header-list">
-                    <Link to="/">
+                    <Link to="/" className="header-list-item">
                         <li>Home</li>
                     </Link>
                     
-                    <Link to="">
+                    <Link to="/add" className="header-list-item">
+                        <li>Adicionar tarefa</li>
                     </Link>
                 
                 </ul>
