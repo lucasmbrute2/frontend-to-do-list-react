@@ -1,0 +1,27 @@
+@import "../../../styles/colors";
+@import "../../../styles/style.scss";
+
+*{
+    text-decoration: none;
+}
+
+.card{
+    width: 300px;
+    border: 2px solid $color-secundary;
+    background-color: #fff;
+    border-radius: 10px;
+    display: block;
+    margin: 20px 30px;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    &-container{
+        max-width: 20%;  
+        &-h2{
+            font-size: 30px;
+            color: $color-primary;
+            display: block;
+            margin: auto 100px;
+        }
+    }
+}
