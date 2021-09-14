@@ -16,11 +16,11 @@ const TaskList =()=>{
         setTask(data) 
     }
     return(
-        <section>
+        <div className="list">
            {task.map((tarefa)=>(
                <TaskCard tarefa ={tarefa} key={tarefa._id}/>
            ))}
-        </section>
+        </div>
     )
 };
 export default TaskList;
