@@ -3,7 +3,7 @@ export const Api = {
     buildGetRequest: ()=>fetch(Api.url),
     buildGetRequestId: (id)=>fetch(Api.url+'/'+id),
     fetchPost: (task)=>{
-        fetch(Api.url+"/add",{
+        return fetch(Api.url+"/add",{
             method: "POST",
             headers: new Headers({
                 "Content-type": "application/json"
