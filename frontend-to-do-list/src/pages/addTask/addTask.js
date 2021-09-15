@@ -1,10 +1,11 @@
 import React from "react";
 import "./addTask.scss"
+import Formulario from "../../components/shared/Form/Formulario"
 
-const AddTask = ()=>{
+const AddTask = (props)=>{
     return(
         <section>
-            Página de add Task
+            <Formulario props={props}titulo="Adicione uma tarefa"/>
         </section>
     )
 };
