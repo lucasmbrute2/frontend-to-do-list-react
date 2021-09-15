@@ -1,8 +1,9 @@
 import React, { useState , useEffect } from "react";
 import "./Formulario.scss";
 import { Api } from "../../../api/api";
+import { Link } from "react-router-dom";
 
-const Formulario = ({ props , titulo })=>{
+const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
     const [fields,setFields] = useState({})
     
     const handleFieldsChange = (e)=>{
@@ -16,7 +17,6 @@ const Formulario = ({ props , titulo })=>{
         try{
             const response = await Api.fetchPost(fields)
             const data = await response
-            props.history.push("/")
         }catch(error){
             console.log(error)
         }
@@ -58,7 +58,9 @@ const Formulario = ({ props , titulo })=>{
                     <input onChange={handleFieldsChange} className="add-form-group-input" name="prazo"></input>
                 </div>
                 <div className="add-form-buttons">
-                    <button className="add-form-buttons-cancelar">Cancelar</button>
+                    <Link to={rotaBttnCancelar}>
+                        <button className="add-form-buttons-cancelar">Cancelar</button>
+                    </Link>
                     <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                 </div>
             

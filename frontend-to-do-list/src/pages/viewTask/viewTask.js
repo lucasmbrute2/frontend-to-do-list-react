@@ -1,12 +1,13 @@
 import React, { useEffect , useState } from "react";
 import "./viewTask.scss"
 import { Api } from "../../api/api"
+import { Link } from "react-router-dom";
+
 const ViewTask = (props)=>{
     console.log(props)
     const id = props.match.params.id
-    console.log(id)
     const [tarefa,setTarefa] = useState({})
-    
+
     useEffect(()=>{
         getTaskById();
     },[])
@@ -17,14 +18,26 @@ const ViewTask = (props)=>{
         setTarefa(data)
     }
     return(
-        <div>
-            <h2>{tarefa.titulo}</h2>
-            <span>{tarefa.descricao}</span>
-            <p>{tarefa.prioridade}</p>
-            <p>{tarefa.estado}</p>
-            <p>{tarefa.prazo}</p>
-            <p>{tarefa.criacao}</p>
-        </div>
+        <section className="view">
+            <div className="view-title">
+                <h2 className="view-title-h2">{tarefa.titulo}</h2>
+            </div>
+            <div className="view-title-span">
+                <span>Descrição: {tarefa.descricao}</span>
+            </div>
+            <div className="view-info">
+                <p className="view-info-text">Prioridade: {tarefa.prioridade}</p>
+                <p className="view-info-text">Status: {tarefa.estado}</p>
+                <p className="view-info-text">Prazo: {tarefa.prazo}</p>
+                <p className="view-info-text">Criado em {tarefa.criacao}</p>
+                <Link to= {`/edit/${tarefa._id}`} className="bttn-editar">
+                    <button >Editar</button>
+                </Link>
+                <button className="bttn-excluir">Excluir</button>
+            </div>
+             
+            
+        </section>
     )
 }
 export default ViewTask;

@@ -6,6 +6,7 @@ import AddTask from "./pages/addTask/addTask";
 import DeleteTask from './pages/deleteTask/deleteTask';
 import Header from "./components/shared/Header/Header";
 import Footer from "./components/shared/Footer/Footer";
+import EditTask from "./pages/editTask/editTask";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact={true} component={Home}/>
           <Route path="/view/:id" component={ViewTask}/>
           <Route path="/add" component={AddTask}/>
+          <Route path="/edit/:id" component={EditTask}/>
           <Route path="/delete/:id" component ={DeleteTask}/>
         </Switch>
       <Footer/>
