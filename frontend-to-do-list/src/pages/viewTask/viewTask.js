@@ -4,7 +4,6 @@ import { Api } from "../../api/api"
 import { Link } from "react-router-dom";
 
 const ViewTask = (props)=>{
-    console.log(props)
     const id = props.match.params.id
     const [tarefa,setTarefa] = useState({})
 
@@ -17,6 +16,12 @@ const ViewTask = (props)=>{
         const data = await response.json();
         setTarefa(data)
     }
+    const handleDelete = async(e)=>{
+        const response = await Api.fetchDelete(id)
+        const data = response;
+        props.history.push('/')
+    }
+    
     return(
         <section className="view">
             <div className="view-title">
@@ -33,7 +38,7 @@ const ViewTask = (props)=>{
                 <Link to= {`/edit/${tarefa._id}`} className="bttn-editar">
                     <button >Editar</button>
                 </Link>
-                <button className="bttn-excluir">Excluir</button>
+                <button onClick={handleDelete}className="bttn-excluir">Excluir</button>
             </div>
              
             

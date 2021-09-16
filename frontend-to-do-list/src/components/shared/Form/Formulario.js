@@ -4,16 +4,28 @@ import { Api } from "../../../api/api";
 import { Link } from "react-router-dom";
 
 const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
-    const [fields,setFields] = useState({})
+    const [fields,setFields] = useState({});
+    const [funcao,setFuncao] = useState(true)
+    const id = props.match.params.id
     
+    useEffect(()=>{
+        getTaskById()
+    },[])
+    
+    const getTaskById = async ()=>{
+        const response = await Api.buildGetRequestId(id)
+        const data = await response.json()
+        setFields(data)
+    }
     const handleFieldsChange = (e)=>{
         const auxFields = { ...fields }
         auxFields[e.target.name] = e.target.value
         console.log(auxFields)
         setFields(auxFields)
-    }
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault()
+
         try{
             const response = await Api.fetchPost(fields)
             const data = await response
@@ -21,7 +33,7 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
             console.log(error)
         }
         
-    } 
+    } ;
     
     return(
         <section className="add">
@@ -29,7 +41,7 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
                     <label htmlFor="titulo" className="add-form-group-label">Titulo</label>
-                    <input onChange={handleFieldsChange} type ="text"name="titulo" className="add-form-group-input"></input>
+                    <input onChange={handleFieldsChange} value={fields.titulo} type ="text"name="titulo" className="add-form-group-input"></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
@@ -58,7 +70,7 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
                     <input onChange={handleFieldsChange} className="add-form-group-input" name="prazo"></input>
                 </div>
                 <div className="add-form-buttons">
-                    <Link to={rotaBttnCancelar}>
+                    <Link to="/">
                         <button className="add-form-buttons-cancelar">Cancelar</button>
                     </Link>
                     <button type="submit" className="add-form-buttons-salvar">Salvar</button>
