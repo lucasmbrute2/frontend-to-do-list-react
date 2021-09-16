@@ -59,9 +59,9 @@ const AddTask = (props)=>{
                 </div>
                 <div className="add-form-buttons">
                     <Link to="/">
-                        <button className="add-form-buttons-cancelar">Cancelar</button>
+                        <button className="add-form-buttons-send">Cancelar</button>
                     </Link>
-                    <button type="submit" className="add-form-buttons-salvar">Salvar</button>
+                    <button type="submit" className="add-form-buttons-send salvar">Salvar</button>
                 </div>
             </form>
         </section>
