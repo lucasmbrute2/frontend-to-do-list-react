@@ -24,7 +24,7 @@ const AddTask = (props)=>{
     } ;
         
     return(
-        <section>
+        <section className='add'>
             <h1 className="add-h1">Cadastre uma tarefa</h1>
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
@@ -33,11 +33,11 @@ const AddTask = (props)=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
-                    <input  onChange={handleFieldsChange} className="add-form" name="descricao"></input>
+                    <input  onChange={handleFieldsChange} className="add-form-group-input" name="descricao"></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
-                    <select onChange={handleFieldsChange}className="add-form-group-select" name="prioridade">
+                    <select onChange={handleFieldsChange}className="add-form-group-input" name="prioridade">
                         <option></option>
                         <option value="alta">Alta</option>
                         <option value="media">Média</option>
@@ -46,7 +46,7 @@ const AddTask = (props)=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="estado"className="add-form-group-label">Status</label>
-                    <select onChange={handleFieldsChange}className="add-form-group-select" name="estado">
+                    <select onChange={handleFieldsChange}className="add-form-group-input" name="estado">
                         <option></option>
                         <option value="fazer" >Fazer</option>
                         <option value="fazendo" >Fazendo</option>
