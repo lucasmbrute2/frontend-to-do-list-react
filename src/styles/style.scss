@@ -4,3 +4,9 @@
     margin: 0;
     display: block;
 }
+@mixin line{
+    width: 40%;
+    display: block;
+    margin: 10px auto;    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.479);  
+}
