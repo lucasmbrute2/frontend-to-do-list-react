@@ -36,7 +36,7 @@
                 margin: 10px auto;
                 display: block;
                 width: 70%;
-                font-size: 17px;
+                font-size: 19px;
                 outline: none;
                 border-radius: 5px;
                 border: 1px solid #000;
@@ -51,7 +51,7 @@
                 border-radius: 5px;
                 border: .1px solid #000;
                 cursor: pointer;
-                background-color: $color-success;
+                background-color: rgba(255, 0, 0, 0.541);
                 color: rgba(0, 0, 0, 0.829);
                 font-size: 18px;
                 font-family: 'Poppins', sans-serif;
@@ -59,6 +59,22 @@
                 &:hover{
                     transform: scale(1.1);
                     
+                }
+                &-salvar{
+                    padding: .7rem 1.1rem;
+                    border-radius: 5px;
+                    border: .1px solid #000;
+                    cursor: pointer;
+                    background-color: $color-success;
+                    color: rgba(0, 0, 0, 0.829);
+                    font-size: 18px;
+                    font-family: 'Poppins', sans-serif;
+                    transition: .3s all;
+                    background-color: $color-success;
+                    
+                    &:hover{
+                        transform: scale(1.1);
+                    }
                 }
             }
             
