@@ -45,18 +45,18 @@ const EditTask = (props)=>{
                     <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
                     <select onChange={handleFieldsChange}className="add-form-group-select" name="prioridade">
                         <option></option>
-                        <option value="alta">Alta</option>
-                        <option value="media">Média</option>
-                        <option value="baixa">Baixa</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Média</option>
+                        <option value="Baixa">Baixa</option>
                     </select>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="estado"className="add-form-group-label">Status</label>
                     <select onChange={handleFieldsChange}className="add-form-group-select" name="estado">
                         <option></option>
-                        <option value="fazer" >Fazer</option>
-                        <option value="fazendo" >Fazendo</option>
-                        <option value="feito" >Feito</option>
+                        <option value="Fazer" >Fazer</option>
+                        <option value="Fazendo" >Fazendo</option>
+                        <option value="Feito" >Feito</option>
                     </select>
                 </div>
                 <div className="add-form-group">
