@@ -25,7 +25,7 @@ const AddTask = (props)=>{
         
     return(
         <section>
-            <h1 className="add-h1">Cadastre um filme</h1>
+            <h1 className="add-h1">Cadastre uma tarefa</h1>
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
                     <label htmlFor="titulo" className="add-form-group-label">Titulo</label>
