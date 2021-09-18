@@ -2,15 +2,26 @@ import React, { useEffect , useState } from "react";
 import "./viewTask.scss"
 import { Api } from "../../api/api"
 import { Link } from "react-router-dom";
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import ReactDOM from 'react-dom';
+import "./styleModal.scss";
 
+const Style = {
+    color: '#000',
+    
+}
 const ViewTask = (props)=>{
     const id = props.match.params.id
     const [tarefa,setTarefa] = useState({})
-
+    const [open, setOpen] = useState(false);
+    
     useEffect(()=>{
         getTaskById();
     },[])
 
+    const onOpenModal = () => setOpen(true);
+    const onCloseModal = () => setOpen(false);
     const getTaskById = async ()=>{
         const response = await Api.buildGetRequestId(id);
         const data = await response.json();
@@ -38,7 +49,12 @@ const ViewTask = (props)=>{
                 <Link to= {`/edit/${tarefa._id}`} className="bttn-editar">
                     <button >Editar</button>
                 </Link>
-                <button onClick={handleDelete}className="bttn-excluir">Excluir</button>
+                <button onClick={onOpenModal} className="bttn-excluir">Excluir</button>
+                <Modal open={open} onClose={onCloseModal} center>
+                    <h2 style={{ color: 'red' }}>Tem certeza que deseja excluir ?</h2>
+                    <button className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
+                    <button onClick={onCloseModal}>Cancelar</button>
+                </Modal>
             </div>
              
             

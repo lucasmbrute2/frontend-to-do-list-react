@@ -6,17 +6,7 @@ import { Link } from "react-router-dom";
 const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
     const [fields,setFields] = useState({});
     const [funcao,setFuncao] = useState(true)
-    const id = props.match.params.id
-    
-    useEffect(()=>{
-        getTaskById()
-    },[])
-    
-    const getTaskById = async ()=>{
-        const response = await Api.buildGetRequestId(id)
-        const data = await response.json()
-        setFields(data)
-    }
+   
     const handleFieldsChange = (e)=>{
         const auxFields = { ...fields }
         auxFields[e.target.name] = e.target.value
