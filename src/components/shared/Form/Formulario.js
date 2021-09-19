@@ -20,7 +20,7 @@ const Formulario = ({ props , titulo })=>{
     }
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        if(id){
+    if(id){
         const response = await Api.fetchPut(fields,id)
         
     }else{
@@ -39,7 +39,14 @@ const Formulario = ({ props , titulo })=>{
         
     return(
         <section className="add">
-            <h1 className="add-h1">{titulo}</h1>
+            <h1 className="add-h1">{id &&(
+                "Edite um item"
+            )}
+            {!id &&(
+                "Cadastre um item"
+            )}
+            </h1>
+            
             {!fields?(
                 <div>Carregando...</div>
             ):(
