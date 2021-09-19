@@ -4,25 +4,24 @@ import { Api } from "../../api/api"
 import { Link } from "react-router-dom";
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import ReactDOM from 'react-dom';
 import "./styleModal.scss";
 
-const Style = {
-    color: '#000',
+// const Style = {
+//     color: '#000',
     
-}
+// }
 const ViewTask = (props)=>{
     const id = props.match.params.id
     const [tarefa,setTarefa] = useState({})
     const [open, setOpen] = useState(false);
     
     useEffect(()=>{
-        getTaskById();
+        taskId()
     },[])
 
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
-    const getTaskById = async ()=>{
+    const taskId = async ()=>{
         const response = await Api.buildGetRequestId(id);
         const data = await response.json();
         setTarefa(data)
@@ -30,6 +29,7 @@ const ViewTask = (props)=>{
     const handleDelete = async(e)=>{
         const response = await Api.fetchDelete(id)
         const data = response;
+        console.log(data)
         props.history.push('/')
     }
     

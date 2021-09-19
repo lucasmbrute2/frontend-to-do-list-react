@@ -5,7 +5,6 @@ import ViewTask from './pages/viewTask/viewTask';
 import DeleteTask from './pages/deleteTask/deleteTask';
 import Header from "./components/shared/Header/Header";
 import Footer from "./components/shared/Footer/Footer";
-import Formulario from './components/shared/Form/Formulario';
 import FormPage from './pages/FormPage/FormPage';
 
 

@@ -1,11 +1,11 @@
 import React, { useState , useEffect } from "react";
 import "./Formulario.scss";
 import { Api } from "../../../api/api";
-import { Link , useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Formulario = ({ props , titulo })=>{
-    const [fields,setFields]= useState({});
     const id = props.match.params.id
+    const [fields,setFields]= useState(id?null:{});
     
     useEffect(()=>{
        getId()  
@@ -26,10 +26,8 @@ const Formulario = ({ props , titulo })=>{
     }else{
             const response = await Api.fetchPost(fields)
             const data = await response
-
-        }
-            
-        props.history.push('/')
+            props.history.push('/')
+        }     
     }
     const getId = async()=>{
         if(id){
@@ -42,6 +40,10 @@ const Formulario = ({ props , titulo })=>{
     return(
         <section className="add">
             <h1 className="add-h1">{titulo}</h1>
+            {!fields?(
+                <div>Carregando...</div>
+            ):(
+
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
                     <label htmlFor="titulo" className="add-form-group-label">Titulo</label>
@@ -61,7 +63,7 @@ const Formulario = ({ props , titulo })=>{
                     </select>
                 </div>
                 <div className="add-form-group">
-                    <label htmlFor="estado"className="add-form-group-label">Status</label>
+                    <label htmlFor="estado"className="add-form-group-label">Status</label>''
                     <select onChange={handleFieldsChange}className="add-form-group-select" name="estado">
                         <option></option>
                         <option value="fazer" >Fazer</option>
@@ -79,10 +81,8 @@ const Formulario = ({ props , titulo })=>{
                     </Link>
                     <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                 </div>
-            
-                      
-
             </form>
+            )}
         </section>
     )
 };
