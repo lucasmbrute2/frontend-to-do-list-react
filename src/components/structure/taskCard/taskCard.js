@@ -7,12 +7,14 @@ const TaskCard = ({ tarefa })=>{
         <Link to={`/view/${tarefa._id}`} className='card'>
             <div className='card-container'>
                 <h2 className='card-container-h2'>{tarefa.titulo}</h2>
-                <span className='card-container-descricao'>{tarefa.descricao}</span>
+                <p className='card-container-descricao'>{tarefa.descricao}</p>
                 <div className="linha"></div>
-                <p className='card-container-prioridade'>Prioridade: {tarefa.prioridade}</p>
-                <p className='card-container-p'>Status: {tarefa.estado}</p>
-                <p className='card-container-p'>Prazo: {tarefa.prazo}</p>	
-                <p className='card-container-p'>Criado em {tarefa.criacao}</p>
+                <div className='card-container-group-text'>
+                    <p className='card-container-prioridade'>Prioridade: {tarefa.prioridade}</p>
+                    <p className='card-container-p'>Status: {tarefa.estado}</p>
+                    <p className='card-container-p'>Prazo: {tarefa.prazo}</p>	
+                    <p className='card-container-criacao'>Criado em {tarefa.criacao}</p>
+                </div>
             </div>
         </Link>
     )
