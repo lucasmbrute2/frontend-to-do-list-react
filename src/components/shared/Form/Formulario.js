@@ -1,30 +1,22 @@
 import React, { useState , useEffect } from "react";
 import "./Formulario.scss";
 import { Api } from "../../../api/api";
-import { Link } from "react-router-dom";
+import { Link , useParams} from "react-router-dom";
 
-const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
-    const [fields,setFields] = useState({});
-    const [funcao,setFuncao] = useState(true)
-   
+const Formulario = ({ props , titulo })=>{
+    const [fields,setFields]= useState({});
+    
     const handleFieldsChange = (e)=>{
         const auxFields = { ...fields }
         auxFields[e.target.name] = e.target.value
-        console.log(auxFields)
         setFields(auxFields)
-    };
-    const handleSubmit = async (e)=>{
-        e.preventDefault()
-
-        try{
-            const response = await Api.fetchPost(fields)
-            const data = await response
-        }catch(error){
-            console.log(error)
-        }
-        
-    } ;
-    
+    }
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        const response = await Api.fetchPost(fields)
+        const data = await response
+        props.history.push('/')
+    }
     return(
         <section className="add">
             <h1 className="add-h1">{titulo}</h1>

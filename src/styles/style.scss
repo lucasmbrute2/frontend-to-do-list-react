@@ -1,8 +1,7 @@
 @mixin container{
     max-width: 1120px;
     width: 100%;
-    margin: 45;
-    display: block;
+    display: block;    
     
 }
 @mixin line{
@@ -10,4 +9,9 @@
     display: block;
     margin: 10px auto;    
     border-bottom: 1px solid rgba(0, 0, 0, 0.479);  
+}
+
+@mixin centralizador{
+    display: flex;
+    flex-direction: column;
 }
