@@ -5,11 +5,18 @@ import { Link , useParams} from "react-router-dom";
 
 const Formulario = ({ props , titulo })=>{
     const [fields,setFields]= useState({});
+    const id = props.match.params.id
+    
+    useEffect(()=>{
+       getId()  
+    },[]);
     
     const handleFieldsChange = (e)=>{
         const auxFields = { ...fields }
         auxFields[e.target.name] = e.target.value
+        //ou podemos utilizar a sintaxe setFields({ ...fields, [name]: value })
         setFields(auxFields)
+       
     }
     const handleSubmit = async(e)=>{
         e.preventDefault();
@@ -17,6 +24,15 @@ const Formulario = ({ props , titulo })=>{
         const data = await response
         props.history.push('/')
     }
+    const getId = async()=>{
+        if(id){
+            const response = await Api.buildGetRequestId(id)
+            const data = await response
+            setFields(data)
+    
+        }
+    }
+        
     return(
         <section className="add">
             <h1 className="add-h1">{titulo}</h1>
