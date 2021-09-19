@@ -16,20 +16,26 @@ const Formulario = ({ props , titulo })=>{
         auxFields[e.target.name] = e.target.value
         //ou podemos utilizar a sintaxe setFields({ ...fields, [name]: value })
         setFields(auxFields)
-       
+        console.log(auxFields)
     }
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        const response = await Api.fetchPost(fields)
-        const data = await response
+        if(id){
+        const response = await Api.fetchPut(fields,id)
+        
+    }else{
+            const response = await Api.fetchPost(fields)
+            const data = await response
+
+        }
+            
         props.history.push('/')
     }
     const getId = async()=>{
         if(id){
             const response = await Api.buildGetRequestId(id)
-            const data = await response
+            const data = await response.json()
             setFields(data)
-    
         }
     }
         
@@ -43,11 +49,11 @@ const Formulario = ({ props , titulo })=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
-                    <input  onChange={handleFieldsChange} className="add-form" name="descricao"></input>
+                    <input  onChange={handleFieldsChange} value={fields.descricao} className="add-form" name="descricao"></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
-                    <select onChange={handleFieldsChange}className="add-form-group-select" name="prioridade">
+                    <select onChange={handleFieldsChange} className="add-form-group-select" name="prioridade">
                         <option></option>
                         <option value="alta">Alta</option>
                         <option value="media">Média</option>
@@ -65,7 +71,7 @@ const Formulario = ({ props , titulo })=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prazo"className="add-form-group-label">Prazo</label>
-                    <input onChange={handleFieldsChange} className="add-form-group-input" name="prazo"></input>
+                    <input onChange={handleFieldsChange} value={fields.prazo} className="add-form-group-input" name="prazo"></input>
                 </div>
                 <div className="add-form-buttons">
                     <Link to="/">
