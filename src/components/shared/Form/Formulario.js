@@ -39,14 +39,7 @@ const Formulario = ({ props , titulo })=>{
         
     return(
         <section className="add">
-            <h1 className="add-h1">{id &&(
-                "Edite um item"
-            )}
-            {!id &&(
-                "Cadastre um item"
-            )}
-            </h1>
-            
+            <h1 className="add-h1">{id? "Altere a tarefa":"Cadastre uma tarefa"}</h1>
             {!fields?(
                 <div>Carregando...</div>
             ):(

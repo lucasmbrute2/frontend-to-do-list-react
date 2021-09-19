@@ -13,9 +13,9 @@
     border: 2px solid $color-secundary;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
-    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
-    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.418);
+    -moz-box-shadow: 0 2px 7px 0 rgba(0,0,0,0.418);
     &-container{
         
         &-h2{
