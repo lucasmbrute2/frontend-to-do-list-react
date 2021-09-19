@@ -1,0 +1,12 @@
+@import "../../.    ./styles/style.scss";
+
+.add{
+    &-h1{
+
+    }
+    &-form{
+        &-group{
+            @include container
+        }
+    }
+}
