@@ -24,7 +24,7 @@ const AddTask = (props)=>{
     } ;
         
     return(
-        <section className='add'>
+        <section>
             <Formulario titulo='Cadastre uma Task'/>
         </section>
     )
