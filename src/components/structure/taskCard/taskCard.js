@@ -10,10 +10,15 @@ const TaskCard = ({ tarefa })=>{
                 <p className='card-container-descricao'>{tarefa.descricao}</p>
                 <div className="linha"></div>
                 <div className='card-container-group-text'>
-                    <p className='card-container-prioridade'>Prioridade: {tarefa.prioridade}</p>
-                    <p className='card-container-p'>Status: {tarefa.estado}</p>
-                    <p className='card-container-p'>Prazo: {tarefa.prazo}</p>	
-                    <p className='card-container-criacao'>Criado em {tarefa.criacao}</p>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-prioridade'><span>Prioridade:</span> {tarefa.prioridade}</p>
+                    </div>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-p'><span>Status:</span> {tarefa.estado}</p>
+                    </div>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-p'><span>Prazo:</span> {tarefa.prazo}</p>	
+                    </div>
                 </div>
             </div>
         </Link>

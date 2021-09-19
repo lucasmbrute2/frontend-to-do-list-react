@@ -22,11 +22,11 @@ const Formulario = ({ props , titulo })=>{
         e.preventDefault();
     if(id){
         const response = await Api.fetchPut(fields,id)
-        
+        props.history.push('/')
     }else{
-            const response = await Api.fetchPost(fields)
-            const data = await response
-            props.history.push('/')
+        const response = await Api.fetchPost(fields)
+        const data = await response
+        props.history.push('/')
         }     
     }
     const getId = async()=>{

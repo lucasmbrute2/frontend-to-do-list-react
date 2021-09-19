@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 *{
     text-decoration: none; 
-    font-family: 'Poppins', sans-serif;
+    
 }
 
 .card{
@@ -12,7 +12,9 @@
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.637);
     background-color: rgb(255, 255, 255);
     width: 400px;
-    min-height: 250px;
+    max-height: 15rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 1rem 2rem;
     &-container{
         display: block;
         flex-wrap: wrap;
@@ -22,32 +24,32 @@
             color: #2c3e50;
             width: 100%;
             text-align: center;
-            
+            margin: 5px auto;
         }
         &-descricao{
-            font-size: 20px;
+            font-size: 18px;
             color: #000;
+            margin: 10px auto;
         }
         &-group-text{
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-            
+            &-div{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
         }
         &-prioridade{
             color: #000;
-            width: 100%;
             
+            display: flex;
+            flex-direction: column;    
         }
         &-p{
             color: #000;
-            
-            width: 50%;
-        }
-        &-criacao{
-            color: #000;
-            text-align: center;
-            width: 100%;
+            width: 50%;    
         }
     }
    
