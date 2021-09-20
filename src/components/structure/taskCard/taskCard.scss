@@ -1,55 +1,71 @@
 @import "../../../styles/colors";
 @import "../../../styles/style.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 *{
-    text-decoration: none;
+    text-decoration: none; 
+    
 }
 
 .card{
-    display: flex;
-    flex-direction: column;
-    margin: 5rem;
-    width: 500px;
-    border: 2px solid $color-secundary;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
-    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
-    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    border-radius:8px;
+    border: 1px solid #c3c3c3;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.637);
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    max-height: 15rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 1rem 0;
     &-container{
-        
+        display: block;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 1rem;
         &-h2{
-            padding: .7rem;
-            font-size: 30px;
-            color: $color-primary;
-            display: block;
-            margin: auto 100px;
+            color: #2c3e50;
+            width: 100%;
             text-align: center;
-            text-transform: uppercase;
+            margin: 5px auto;
         }
         &-descricao{
-            color: $color-secundary;
-            display: block;
-            text-align: center;
-            padding: 1rem;
-            font-weight: 500;
-            text-shadow: .1em .1em .2em #fff;
-            font-family: 'Poppins', sans-serif;
             font-size: 18px;
+            color: #000;
+            margin: 10px auto;
+        }
+        &-group-text{
+            display: flex;
+            
+            &-div{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
         }
         &-prioridade{
             color: #000;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
+            
+            display: flex;
+            flex-direction: column;    
         }
         &-p{
-            font-family: 'Poppins', sans-serif;
-            color: black;
-            text-align: center;
+            color: #000;
+            width: 50%;    
         }
     }
-
+   
+       
+    
 }
+
 .linha{
     @include line
+}
+
+@media (max-width: 400px){
+    .card{
+        max-height: none;
+        &-container-group-text{
+            display: block;
+        }
+    }
 }

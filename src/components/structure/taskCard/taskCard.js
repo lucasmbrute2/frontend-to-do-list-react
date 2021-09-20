@@ -2,17 +2,28 @@ import React from "react";
 import "./taskCard.scss";
 import { Link } from 'react-router-dom';
 
-const TaskCard = ({ tarefa })=>{
+const TaskCard = ({ tarefa , loading })=>{
+    if(loading){
+        return <div>Carregando...</div>
+    }
+        
     return(
         <Link to={`/view/${tarefa._id}`} className='card'>
             <div className='card-container'>
                 <h2 className='card-container-h2'>{tarefa.titulo}</h2>
-                <span className='card-container-descricao'>{tarefa.descricao}</span>
+                <p className='card-container-descricao'>{tarefa.descricao}</p>
                 <div className="linha"></div>
-                <p className='card-container-prioridade'>Prioridade: {tarefa.prioridade}</p>
-                <p className='card-container-p'>Status: {tarefa.estado}</p>
-                <p className='card-container-p'>Prazo: {tarefa.prazo}</p>	
-                <p className='card-container-p'>Criado em {tarefa.criacao}</p>
+                <div className='card-container-group-text'>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-prioridade'><span>Prioridade:</span> {tarefa.prioridade}</p>
+                    </div>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-p'><span>Status:</span> {tarefa.estado}</p>
+                    </div>
+                    <div className="card-container-group-text-div">
+                        <p className='card-container-p'><span>Prazo:</span> {tarefa.prazo}</p>	
+                    </div>
+                </div>
             </div>
         </Link>
     )

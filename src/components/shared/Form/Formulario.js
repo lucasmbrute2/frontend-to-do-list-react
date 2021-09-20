@@ -3,41 +3,47 @@ import "./Formulario.scss";
 import { Api } from "../../../api/api";
 import { Link } from "react-router-dom";
 
-const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
-    const [fields,setFields] = useState({});
-    const [funcao,setFuncao] = useState(true)
+const Formulario = ({ props , titulo })=>{
     const id = props.match.params.id
+    const [fields,setFields]= useState(id?null:{});
     
     useEffect(()=>{
-        getTaskById()
-    },[])
+       getId()  
+    },[]);
     
-    const getTaskById = async ()=>{
-        const response = await Api.buildGetRequestId(id)
-        const data = await response.json()
-        setFields(data)
-    }
     const handleFieldsChange = (e)=>{
         const auxFields = { ...fields }
         auxFields[e.target.name] = e.target.value
-        console.log(auxFields)
+        //ou podemos utilizar a sintaxe setFields({ ...fields, [name]: value })
         setFields(auxFields)
-    };
-    const handleSubmit = async (e)=>{
-        e.preventDefault()
-
-        try{
-            const response = await Api.fetchPost(fields)
-            const data = await response
-        }catch(error){
-            console.log(error)
+        console.log(auxFields)
+    }
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+    if(id){
+        const response = await Api.fetchPut(fields,id)
+        props.history.push('/')
+    }else{
+        const response = await Api.fetchPost(fields)
+        const data = await response
+        props.history.push('/')
+        }     
+    }
+    const getId = async()=>{
+        if(id){
+            const response = await Api.buildGetRequestId(id)
+            const data = await response.json()
+            setFields(data)
         }
+    }
         
-    } ;
-    
     return(
         <section className="add">
-            <h1 className="add-h1">{titulo}</h1>
+            <h1 className="add-h1">{id? "Altere a tarefa":"Cadastre uma tarefa"}</h1>
+            {!fields?(
+                <div>Carregando...</div>
+            ):(
+
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
                     <label htmlFor="titulo" className="add-form-group-label">Titulo</label>
@@ -45,11 +51,11 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
-                    <input  onChange={handleFieldsChange} className="add-form" name="descricao"></input>
+                    <input  onChange={handleFieldsChange} value={fields.descricao} className="add-form" name="descricao"></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
-                    <select onChange={handleFieldsChange}className="add-form-group-select" name="prioridade">
+                    <select onChange={handleFieldsChange} className="add-form-group-select" name="prioridade">
                         <option></option>
                         <option value="alta">Alta</option>
                         <option value="media">Média</option>
@@ -67,7 +73,7 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prazo"className="add-form-group-label">Prazo</label>
-                    <input onChange={handleFieldsChange} className="add-form-group-input" name="prazo"></input>
+                    <input onChange={handleFieldsChange} value={fields.prazo} className="add-form-group-input" name="prazo"></input>
                 </div>
                 <div className="add-form-buttons">
                     <Link to="/">
@@ -75,10 +81,8 @@ const Formulario = ({ props , titulo , rotaBttnCancelar })=>{
                     </Link>
                     <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                 </div>
-            
-                      
-
             </form>
+            )}
         </section>
     )
 };
