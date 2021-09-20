@@ -7,14 +7,11 @@ const TaskList =({ task, loading })=>{
         return (
             <div class="container-loading">
                 <div class="Loading"></div>
-            </div>
-            
+            </div>  
         )
     }
     return(
         <div className="list" style={{
-            
-    
         }}>
            {task.map((tarefa)=>(
                <TaskCard tarefa ={tarefa} key={tarefa._id} />
