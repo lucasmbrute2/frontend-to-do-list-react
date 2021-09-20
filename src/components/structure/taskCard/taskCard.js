@@ -2,7 +2,11 @@ import React from "react";
 import "./taskCard.scss";
 import { Link } from 'react-router-dom';
 
-const TaskCard = ({ tarefa })=>{
+const TaskCard = ({ tarefa , loading })=>{
+    if(loading){
+        return <div>Carregando...</div>
+    }
+        
     return(
         <Link to={`/view/${tarefa._id}`} className='card'>
             <div className='card-container'>

@@ -63,7 +63,7 @@ const Formulario = ({ props , titulo })=>{
                     </select>
                 </div>
                 <div className="add-form-group">
-                    <label htmlFor="estado"className="add-form-group-label">Status</label>''
+                    <label htmlFor="estado"className="add-form-group-label">Status</label>
                     <select onChange={handleFieldsChange}className="add-form-group-select" name="estado">
                         <option></option>
                         <option value="fazer" >Fazer</option>

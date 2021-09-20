@@ -14,7 +14,7 @@
     width: 400px;
     max-height: 15rem;
     font-family: 'Poppins', sans-serif;
-    margin: 1rem 2rem;
+    margin: 1rem 0;
     &-container{
         display: block;
         flex-wrap: wrap;
@@ -33,7 +33,7 @@
         }
         &-group-text{
             display: flex;
-            justify-content: space-between;
+            
             &-div{
                 display: flex;
                 width: 100%;
@@ -59,4 +59,13 @@
 
 .linha{
     @include line
+}
+
+@media (max-width: 400px){
+    .card{
+        max-height: none;
+        &-container-group-text{
+            display: block;
+        }
+    }
 }
