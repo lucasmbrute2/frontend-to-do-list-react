@@ -47,15 +47,15 @@ const Formulario = ({ props , titulo })=>{
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="add-form-group">
                     <label htmlFor="titulo" className="add-form-group-label">Titulo</label>
-                    <input onChange={handleFieldsChange} value={fields.titulo} type ="text"name="titulo" className="add-form-group-input"></input>
+                    <input onChange={handleFieldsChange} value={fields.titulo} type ="text"name="titulo" className="add-form-group-input" required></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
-                    <input  onChange={handleFieldsChange} value={fields.descricao} className="add-form" name="descricao"></input>
+                    <input  onChange={handleFieldsChange} value={fields.descricao} className="add-form" name="descricao" required></input>
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
-                    <select onChange={handleFieldsChange} className="add-form-group-select" name="prioridade">
+                    <select onChange={handleFieldsChange} className="add-form-group-select" name="prioridade" required>
                         <option></option>
                         <option value="Alta">Alta</option>
                         <option value="Média">Média</option>
@@ -64,7 +64,7 @@ const Formulario = ({ props , titulo })=>{
                 </div>
                 <div className="add-form-group">
                     <label htmlFor="estado"className="add-form-group-label">Status</label>
-                    <select onChange={handleFieldsChange}className="add-form-group-select" name="estado">
+                    <select onChange={handleFieldsChange}className="add-form-group-select" name="estado" required>
                         <option></option>
                         <option value="Fazer" >Fazer</option>
                         <option value="Fazendo" >Fazendo</option>

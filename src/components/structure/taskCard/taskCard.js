@@ -6,6 +6,7 @@ const TaskCard = ({ tarefa , loading })=>{
     if(loading){
         return <div>Carregando...</div>
     }
+    console.log(tarefa)
     return(
         <Link to={`/view/${tarefa._id}`} className='card'>
             <div className='card-container'>
@@ -14,7 +15,7 @@ const TaskCard = ({ tarefa , loading })=>{
                 <div className="linha"></div>
                 <div className='card-container-group-text'>
                     <div className="card-container-group-text-div">
-                        <p className={tarefa.prioridade=='baixa'?"card-container-group-text-div-baixa" :tarefa.prioridade=='media'?"card-container-group-text-div-media" : "card-container-group-text-div-alta"}><span>Prioridade</span> {tarefa.prioridade}</p>
+                        <p className={tarefa.prioridade=='Baixa'?"card-container-group-text-div-baixa" :tarefa.prioridade=='Média'?"card-container-group-text-div-media" : "card-container-group-text-div-alta"}><span>Prioridade</span> {tarefa.prioridade}</p>
                     </div>
                     <div className="card-container-group-text-div">
                         <p className='card-container-p'><span>Status</span> {tarefa.estado}</p>

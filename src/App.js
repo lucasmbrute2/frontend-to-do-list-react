@@ -8,7 +8,7 @@ import Footer from "./components/shared/Footer/Footer";
 import FormPage from './pages/FormPage/FormPage';
 
 
-function App(props){
+function App(){
   return (
     <div className="App">
       <Header/>
