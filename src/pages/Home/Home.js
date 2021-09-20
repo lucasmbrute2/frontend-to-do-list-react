@@ -3,6 +3,7 @@ import "./Home.scss";
 import TaskList from "../../components/structure/taskList/taskList";
 import { Api } from "../../api/api"
 
+
 const Home =() =>{
     const [task,setTask] = useState([])
     
@@ -18,7 +19,7 @@ const Home =() =>{
     return(
         <section className="Home">
             <h1 className="Home-h1">To do List</h1>
-            <TaskList task={task} loading={!task.length}/>
+                <TaskList task={task} loading={!task.length}/>  
         </section>
     )
 }

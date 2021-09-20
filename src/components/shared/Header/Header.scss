@@ -5,9 +5,9 @@
 .header{
     background-color: #2f3542;
     padding: 0;
-    box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.31);
-    -webkit-box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.31);
-    -moz-box-shadow: -2px 5px 5px 0px rgba(0,0,0,0.31);
+    box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.31);
 }
 .container{
     @include container
