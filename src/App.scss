@@ -7,6 +7,9 @@
   display: flex;
   flex-direction: column; 
   width: 100%;
+  backdrop-filter: blur(10px);
+  background-image: url("./img/to-do-list-img.jpg");
+  background-attachment: fixed;
 }
 
 
