@@ -16,7 +16,7 @@ span{
     width: 400px;
     max-height: 15rem;
     font-family: 'Poppins', sans-serif;
-    margin: 1rem 0;
+    margin: 0 3rem 3rem 7rem;
     &-container{
         display: block;
         flex-wrap: wrap;
@@ -75,6 +75,12 @@ span{
     @include line
 }
 
+@media (max-width: 1220px){
+    .card{
+        margin: 3rem auto;
+        flex-wrap: wrap;
+    }
+}
 @media (max-width: 400px){
     .card{
         max-height: none;
