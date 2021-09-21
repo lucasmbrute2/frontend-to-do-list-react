@@ -51,10 +51,10 @@ const ViewTask = (props)=>{
                 </Link>
                 <button onClick={onOpenModal} className="bttn-excluir">Excluir</button>
                 <Modal open={open} onClose={onCloseModal} center>
-                    <h2 style={{ color: 'red' }}>Tem certeza que deseja excluir ?</h2>
-                    <button className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
-                    <button onClick={onCloseModal}>Cancelar</button>
-                </Modal>
+                    <h2 style={{ color: '#2c3e50' }}>Tem certeza que deseja excluir ?</h2>
+                    <button onClick={onCloseModal} className='bttn-excluir2' >Cancelar</button>
+                    <button style={{ color: 'rgba(255, 0, 0, 0.836)' }}className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
+                </Modal>   
             </div>
              
             

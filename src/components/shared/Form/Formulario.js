@@ -79,10 +79,10 @@ const Formulario = ({ props , titulo })=>{
                     </div>
                 </div>
                 <div className="add-form-buttons">
-                    <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                     <Link to="/">
                         <button className="add-form-buttons-cancelar">Cancelar</button>
                     </Link>
+                    <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                 </div>
             </form>
             )}
