@@ -15,22 +15,44 @@
         color: #2c3e50;
     }
     &-form{
-        
+        font-family: 'Poppins', 'Open Sans';
+        &-buttons{
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-around;
+            
+            &-cancelar,&-salvar{
+                padding: .8rem 1.3rem .5rem 1.3rem;
+                font-size: 15px;
+                font-weight:bold;
+                border: 2px solid rgba(247, 1, 1, 0.671);
+                border-radius: 6px;
+                cursor: pointer;
+                transition: .2s ease-out;
+                background-color: #fff;
+                box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.363);
+                color: rgba(0, 0, 0, 0.842);
+                
+            }
+            &-salvar{
+                border-color: rgba(100, 177, 100, 0.918);
+            }
+            &-cancelar:hover,&-salvar:hover{
+                transform: scale(1.1);
+            }
+        }    
         
         &-group{
             display: flex;
             flex-direction: column;
             margin: 10px auto;
-            
-            &-div{
-                display: flex;
-            }
             &-label{
                 margin-bottom: 5px;
                 font-size: 15px;
             }           
             &-select{
-                      
+                width: 30%;
+                height: 20px;
             }
             input{
                 border: 1px solid #ccc;
@@ -39,6 +61,7 @@
                 font-size: 18px;
                 outline: none;
                 width: 100%;
+                height: 30px;
             }
         }
     }

@@ -53,6 +53,10 @@ const Formulario = ({ props , titulo })=>{
                     <label htmlFor="descricao" className="add-form-group-label">Descrição</label>
                     <input  onChange={handleFieldsChange} value={fields.descricao} className="add-form-group-input" name="descricao" required></input>
                 </div>
+                <div className="add-form-group">
+                    <label htmlFor="prazo"className="add-form-group-label">Prazo</label>
+                    <input onChange={handleFieldsChange} value={fields.prazo} className="add-form-group-input" name="prazo"></input>
+                </div>
                 <div className='add-form-group-div'>
                     <div className="add-form-group">
                         <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
@@ -74,15 +78,11 @@ const Formulario = ({ props , titulo })=>{
                         </select>
                     </div>
                 </div>
-                <div className="add-form-group">
-                    <label htmlFor="prazo"className="add-form-group-label">Prazo</label>
-                    <input onChange={handleFieldsChange} value={fields.prazo} className="add-form-group-input" name="prazo"></input>
-                </div>
                 <div className="add-form-buttons">
+                    <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                     <Link to="/">
                         <button className="add-form-buttons-cancelar">Cancelar</button>
                     </Link>
-                    <button type="submit" className="add-form-buttons-salvar">Salvar</button>
                 </div>
             </form>
             )}
