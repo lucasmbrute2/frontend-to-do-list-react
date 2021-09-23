@@ -61,7 +61,6 @@ const Formulario = ({ props , titulo })=>{
                     <div className="add-form-group">
                         <label htmlFor="prioridade"className="add-form-group-label">Prioridade</label>
                         <select onChange={handleFieldsChange} className="add-form-group-select" name="prioridade" required>
-                            <option></option>
                             <option value="Alta">Alta</option>
                             <option value="Média">Média</option>
                             <option value="Baixa">Baixa</option>
@@ -71,7 +70,6 @@ const Formulario = ({ props , titulo })=>{
                     <div className="add-form-group">
                         <label htmlFor="estado"className="add-form-group-label">Status</label>
                         <select onChange={handleFieldsChange}className="add-form-group-select" name="estado" required>
-                            <option></option>
                             <option value="Fazer" >Fazer</option>
                             <option value="Fazendo" >Fazendo</option>
                             <option value="Feito" >Feito</option>
@@ -79,7 +77,7 @@ const Formulario = ({ props , titulo })=>{
                     </div>
                 </div>
                 <div className="add-form-buttons">
-                    <Link to="/">
+                    <Link to={id?`/view/${id}`:"/" }>
                         <button className="add-form-buttons-cancelar">Cancelar</button>
                     </Link>
                     <button type="submit" className="add-form-buttons-salvar">Salvar</button>

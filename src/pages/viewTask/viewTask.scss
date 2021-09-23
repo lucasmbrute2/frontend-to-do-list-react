@@ -1,0 +1,41 @@
+
+.view{
+    max-width:800px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 200px 20px;
+    
+   
+    &-container{
+        border-radius:8px;
+        border: 1px solid #c3c3c3;
+        box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.637);
+        background-color: rgba(255, 255, 255, 0.856);
+        width: 400px;
+        font-family: 'Poppins', sans-serif;
+        width: 70%;
+        padding: .6rem;
+        &-title{
+            color: rgba(0, 0, 0, 0.801);
+            display: grid;
+            grid-template-columns: .9fr .5fr;
+            
+            &-h2{
+                justify-self: end;
+                margin: 5px 0 15px 0;              
+                
+            }
+            &-edit{
+                justify-self: flex-end;align-items: center;
+                color: rgba(0, 0, 0, 0.644);
+                transition: .2s ease-out;
+                &:hover{
+                    color: rgba(0, 0, 0, 0.925);
+                }
+            }
+        }
+    }
+
+
+}
