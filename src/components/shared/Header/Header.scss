@@ -34,8 +34,11 @@
 }
 
 @media (max-width: 500px){
-   .header-list-div{
-       margin: 15px 15px;
-      
-   }
+    .header{
+        margin: 0 auto;
+        &-list-div{
+        margin: 15px 15px;
+          
+       }
+    }
 }
