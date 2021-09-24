@@ -16,7 +16,6 @@ const Formulario = ({ props , titulo })=>{
         auxFields[e.target.name] = e.target.value
         //ou podemos utilizar a sintaxe setFields({ ...fields, [name]: value })
         setFields(auxFields)
-        console.log(auxFields)
     }
     const handleSubmit = async(e)=>{
         e.preventDefault();

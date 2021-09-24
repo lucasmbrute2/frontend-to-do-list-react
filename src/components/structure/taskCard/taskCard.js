@@ -6,7 +6,6 @@ const TaskCard = ({ tarefa , loading })=>{
     if(loading){
         return <div>Carregando...</div>
     }
-    console.log(tarefa)
     return(
         <Link to={`/view/${tarefa._id}`} className='card'>
             <div className='card-container'>

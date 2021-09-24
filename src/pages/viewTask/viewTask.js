@@ -30,7 +30,6 @@ const ViewTask = (props)=>{
     const handleDelete = async(e)=>{
         const response = await Api.fetchDelete(id)
         const data = response;
-        console.log(data)
         props.history.push('/')
     }
     
