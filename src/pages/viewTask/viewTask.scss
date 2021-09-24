@@ -4,8 +4,39 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    margin: 200px 20px;
-    
+    margin: 200px 0px;
+    &-info{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        &-p{
+            font-weight: bold;
+            color:rgba(0, 0, 0, 0.801);
+            justify-self: start;
+        }
+        &-span{
+            margin-left: 10px;
+            color: #2f3542;
+            font-weight: 400;
+            
+        }
+        &-button{
+            justify-self: end;
+            align-self: end;
+            padding: .2rem;
+            border: 1.8px solid rgba(255, 0, 0, 0.63);
+            border-radius: 4px;
+            color:rgba(255, 0, 0, 0.678);
+            transition: .2s all;
+            font-size: 15px;
+            
+            
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+     
    
     &-container{
         border-radius:8px;
@@ -38,4 +69,10 @@
     }
 
 
+}
+
+@media (max-width: 800px){
+    .view-info{
+        display: block;
+    }
 }

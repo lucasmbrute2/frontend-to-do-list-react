@@ -26,7 +26,7 @@ const Formulario = ({ props , titulo })=>{
     }else{
         const response = await Api.fetchPost(fields)
         const data = await response
-        // props.history.push('/')
+        props.history.push('/')
         }     
     }
     const getId = async()=>{
