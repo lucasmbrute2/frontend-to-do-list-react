@@ -7,6 +7,8 @@ import { Modal } from 'react-responsive-modal';
 import "./styleModal.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { format } from "date-fns";
+
 // const Style = {
 //     color: '#000',
     
@@ -32,7 +34,7 @@ const ViewTask = (props)=>{
         const data = response;
         props.history.push('/')
     }
-    
+    const date = format(new Date(tarefa.criacao),'dd/MM/yyyy')
     return(
         <section className="view">
             <div className="view-container">
@@ -49,7 +51,7 @@ const ViewTask = (props)=>{
                     <p style={{ color: "rgba(0, 0, 0, 0.801)" }}><strong>Prioridade:</strong><span className='view-info-span'>{tarefa.prioridade}</span></p>
                     <p className="view-info-p">Status: <span className='view-info-span'>{tarefa.estado}</span></p>
                     <p className="view-info-p">Prazo: <span className='view-info-span'>{tarefa.prazo}</span></p>
-                    <p className="view-info-p">Criado em <span className='view-info-span'>{tarefa.criacao}</span></p>
+                    <p className="view-info-p">Criado em <span className='view-info-span'>{date}</span></p>
                     <button onClick={onOpenModal} className="view-info-button">Excluir</button>
                     <Modal open={open} onClose={onCloseModal} center>
                         <h2 style={{ color: '#2c3e50' }}>Tem certeza que deseja excluir ?</h2>
