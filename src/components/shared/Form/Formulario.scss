@@ -2,7 +2,7 @@
 
 .add{
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.452);
     width: 300px;
     margin: 50px auto;
@@ -68,3 +68,11 @@
     }
 }
 
+@media (max-width: 600px){
+    .add{
+        width: auto;
+        margin: 50px 30px;
+        padding: 0 35px 25px 25px;
+        
+    }
+}

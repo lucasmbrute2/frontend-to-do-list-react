@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import "./styleModal.scss";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 // const Style = {
 //     color: '#000',
     
@@ -35,28 +36,29 @@ const ViewTask = (props)=>{
     
     return(
         <section className="view">
-            <div className="view-title">
-                <h2 className="view-title-h2">{tarefa.titulo}</h2>
-            </div>
-            <div className="view-title-span">
-                <span>Descrição: {tarefa.descricao}</span>
-            </div>
-            <div className="view-info">
-                <p className="view-info-text">Prioridade: {tarefa.prioridade}</p>
-                <p className="view-info-text">Status: {tarefa.estado}</p>
-                <p className="view-info-text">Prazo: {tarefa.prazo}</p>
-                <p className="view-info-text">Criado em {tarefa.criacao}</p>
-                <Link to= {`/edit/${tarefa._id}`} className="bttn-editar">
-                    <button >Editar</button>
+            <div className="view-container">
+                <div className="view-container-title">
+                    <h2 className="view-container-title-h2">{tarefa.titulo}</h2>
+                <Link to= {`/edit/${tarefa._id}`} className="view-container-title-edit">
+                    <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
                 </Link>
-                <button onClick={onOpenModal} className="bttn-excluir">Excluir</button>
-                <Modal open={open} onClose={onCloseModal} center>
-                    <h2 style={{ color: '#2c3e50' }}>Tem certeza que deseja excluir ?</h2>
-                    <button onClick={onCloseModal} className='bttn-excluir2' >Cancelar</button>
-                    <button style={{ color: 'rgba(255, 0, 0, 0.836)' }}className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
-                </Modal>   
-            </div>
-             
+                </div>
+               
+               
+                <div className="view-info">
+                    <p className='view-info-p'>Descrição:<span className='view-info-span'>{tarefa.descricao}</span></p>
+                    <p style={{ color: "rgba(0, 0, 0, 0.801)" }}><strong>Prioridade:</strong><span className='view-info-span'>{tarefa.prioridade}</span></p>
+                    <p className="view-info-p">Status: <span className='view-info-span'>{tarefa.estado}</span></p>
+                    <p className="view-info-p">Prazo: <span className='view-info-span'>{tarefa.prazo}</span></p>
+                    <p className="view-info-p">Criado em <span className='view-info-span'>{tarefa.criacao}</span></p>
+                    <button onClick={onOpenModal} className="view-info-button">Excluir</button>
+                    <Modal open={open} onClose={onCloseModal} center>
+                        <h2 style={{ color: '#2c3e50' }}>Tem certeza que deseja excluir ?</h2>
+                        <button onClick={onCloseModal} className='bttn-excluir2' >Cancelar</button>
+                        <button style={{ color: 'tomato' }}className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
+                    </Modal>   
+                </div>
+            </div>  
             
         </section>
     )
