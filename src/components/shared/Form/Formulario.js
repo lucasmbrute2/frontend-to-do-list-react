@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Formulario = ({ props , titulo })=>{
     const id = props.match.params.id
-    const [fields,setFields]= useState(id?null:{});
+    const [fields,setFields]= useState(id?null:{estado:'Fazer', prioridade:"Alta"});
     
     useEffect(()=>{
        getId()  
