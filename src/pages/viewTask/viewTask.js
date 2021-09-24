@@ -7,12 +7,13 @@ import { Modal } from 'react-responsive-modal';
 import "./styleModal.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { format } from "date-fns";
+
 
 // const Style = {
 //     color: '#000',
     
 // }
+
 const ViewTask = (props)=>{
     const id = props.match.params.id
     const [tarefa,setTarefa] = useState({})
@@ -34,7 +35,8 @@ const ViewTask = (props)=>{
         const data = response;
         props.history.push('/')
     }
-    const date = format(new Date(tarefa.criacao),'dd/MM/yyyy')
+    const today = new Date()
+    const date = new Intl.DateTimeFormat('pt-BR',{day: 'numeric', month: 'short', year: 'numeric'}).format(today)
     return(
         <section className="view">
             <div className="view-container">
@@ -56,7 +58,7 @@ const ViewTask = (props)=>{
                     <Modal open={open} onClose={onCloseModal} center>
                         <h2 style={{ color: '#2c3e50' }}>Tem certeza que deseja excluir ?</h2>
                         <button onClick={onCloseModal} className='bttn-excluir2' >Cancelar</button>
-                        <button style={{ color: 'tomato' }}className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
+                        <button style={{ color: 'rgba(255, 0, 0, 0.878)' }}className='bttn-excluir2'onClick={handleDelete}>Excluir</button>
                     </Modal>   
                 </div>
             </div>  
