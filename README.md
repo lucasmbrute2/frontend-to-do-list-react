@@ -1,8 +1,8 @@
-
-Acesso o Web Site em: https://frontend-to-do-list-react.herokuapp.com/
-
 # Getting Started with Create React App
 
+![Alt text](/src/img/print-projeto-react.png?raw=true "Projeto")
+
+<!-- Acesso o Web Site em: https://frontend-to-do-list-react.herokuapp.com/ -->
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
