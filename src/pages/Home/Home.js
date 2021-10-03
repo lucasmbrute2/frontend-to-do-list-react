@@ -5,7 +5,7 @@ import { Api } from "../../api/api"
 
 
 const Home =() =>{
-    const [task,setTask] = useState([])
+    const [task,setTask] = useState(undefined)
     
     useEffect(()=>{
         getTask();
